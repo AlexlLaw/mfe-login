@@ -1,0 +1,29 @@
+<h1>LOGIN</h1>
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="textfield">
+        <label for="usuario"> Usuario </label>
+        <input type="text" name="usuario" id="usuario" placeholder="Usuario" formControlName="usuario" inputmode="text" required>
+    </div>
+
+    <div *ngIf="form.get('usuario')?.errors?.['required'] && form.get('usuario')?.touched">
+        Usuario obrigatório
+    </div>
+
+    <div class="textfield">
+        <label for="senha"> Senha </label>
+        <input type="password" name="senha" id="senha" placeholder="Senha" formControlName="senha" required>
+    </div>
+
+    <div *ngIf="form.get('senha')?.errors?.['required'] && form.get('senha')?.touched">
+        Senha obrigatório
+    </div>
+    <div>
+        <a [routerLink]="['recuperar-senha']" style="color: white;">Recuperar senha</a>
+    </div>
+
+    <a [routerLink]="['']">
+        <button class="btn-login" type="submit">login</button>
+    </a>
+</form>
+
