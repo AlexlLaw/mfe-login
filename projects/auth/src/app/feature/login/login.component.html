@@ -2,12 +2,12 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
 
     <div class="textfield">
-        <label for="usuario"> Usuario </label>
-        <input type="text" name="usuario" id="usuario" placeholder="Usuario" formControlName="usuario" inputmode="text" required>
+        <label for="cpf"> cpf </label>
+        <input type="text" name="cpf" id="cpf" placeholder="cpf" formControlName="cpf" inputmode="text" required>
     </div>
 
-    <div *ngIf="form.get('usuario')?.errors?.['required'] && form.get('usuario')?.touched">
-        Usuario obrigatório
+    <div *ngIf="form.get('cpf')?.errors?.['required'] && form.get('cpf')?.touched">
+        cpf obrigatório
     </div>
 
     <div class="textfield">
@@ -22,8 +22,6 @@
         <a [routerLink]="['recuperar-senha']" style="color: white;">Recuperar senha</a>
     </div>
 
-    <a [routerLink]="['']">
         <button class="btn-login" type="submit">login</button>
-    </a>
 </form>
 
